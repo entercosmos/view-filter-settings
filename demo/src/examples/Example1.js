@@ -82,10 +82,12 @@ class Example1 extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+
+    const view = state.getIn(['cache', 'viewsById', props.viewId])
 
     return {
-        view: state.getIn(['cache', 'viewsById', 'viw1']),
+        view,
         operators: state.get('operators').map(id => {
             return state.getIn(['cache', 'operatorsById', id])
         }),

@@ -35,6 +35,10 @@ export default class Select extends React.Component {
             return option.id === this.props.value
         })
 
+        if (!option) {
+            throw new Error(this.props.value)
+        }
+
         return (
             <div
                 className={cx(

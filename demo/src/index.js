@@ -42,23 +42,45 @@ class Viewport extends React.Component {
     }
 }
 
+const views = ['attachment', 'autonumber', 'checkbox', 'collaborator', 'createdCollaborator', 'createdTime', 'date', 'linkToAnotherRecord', 'longText', 'multipleCollaborator', 'multipleSelect', 'number', 'singleLineText', 'singleSelect', 'updatedTime']
+
 class Demo extends Component {
     render() {
         return <Provider store={store}>
             <h1>ViewFilterSettings Demo</h1>
             <h2>Desktop</h2>
+            {views.map(id => (
+                <div
+                    key={id}
+                >
+                    <h3>{id}</h3>
+                    <Viewport>
+                        <div
+                            className={css`
+                              width: 600px;
+                              height: 400px;
+                            `}
+                        >
+                            <Example1
+                                viewId={id}
+                            />
+                        </div>
+                    </Viewport>
+                </div>
+            ))}
+            <h2>Empty list</h2>
             <Viewport>
                 <div
                     className={css`
-              width: 600px;
-              height: 400px;
-            `}
+                              width: 600px;
+                              height: 400px;
+                            `}
                 >
-                    <Example1/>
+                    <Example1
+                        viewId={'empty'}
+                    />
                 </div>
             </Viewport>
-            <h2>Mobile</h2>
-            <h2>Empty list</h2>
         </Provider>
     }
 }
