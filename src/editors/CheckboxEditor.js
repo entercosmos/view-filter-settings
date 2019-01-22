@@ -18,9 +18,7 @@ export default class CheckboxEditor extends React.Component {
                 <Switch
                     width={26}
                     value={this.props.value}
-                    onChange={({value}) => {
-                        this.props.onChange(value)
-                    }}
+                    onChange={this.props.onChange}
                 />
             </div>
         )

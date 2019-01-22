@@ -32,11 +32,13 @@ export default class Switch extends React.Component {
                     padding
                 }}
                 onClick={(e) => {
-                    this.props.onChange({
-                        e,
-                        id: this.props.id,
-                        value: !active
-                    })
+                    if (this.props.onChange) {
+                        this.props.onChange({
+                            e,
+                            id: this.props.id,
+                            value: !active
+                        })
+                    }
                 }}
             >
                 <div

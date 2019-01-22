@@ -42,6 +42,15 @@ export default (state, action) => {
             return state
         }
 
+        case 'UPDATE_FILTER_VALUE': {
+
+            const {id, value} = action.payload
+            state = state
+                .setIn(['cache', 'filtersById', id, 'value'], fromJS(value))
+
+            return state
+        }
+
         case 'REMOVE_FILTER': {
             const {viewId, id} = action.payload
             state = state.updateIn(['cache', 'viewsById', viewId, 'filters'], filters => {

@@ -17,6 +17,7 @@ export default class CollaboratorEditor extends React.Component {
                     id: 'col3',
                     name: 'Leia Organa'
                 }]}
+                onChange={this.props.onChange}
             />
         )
     }

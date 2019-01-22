@@ -9,6 +9,7 @@ export default class FileTypeEditor extends React.Component {
             <Select
                 value={this.props.value}
                 options={fileTypes}
+                onChange={this.props.onChange}
             />
         )
     }

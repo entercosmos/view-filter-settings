@@ -475,7 +475,7 @@ export default fromJS({
             },
             'singleLineText_isNotEmpty': {
                 id: 'singleLineText_isNotEmpty',
-                name: 'is not emptuy',
+                name: 'is not empty',
                 editorId: null,
                 defaultValue: null
             },

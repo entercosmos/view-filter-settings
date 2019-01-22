@@ -133,7 +133,8 @@ export default class Filter extends React.Component {
                             {valueRenderer({
                                 fieldId: this.props.fieldId,
                                 operatorId: this.props.operatorId,
-                                value: this.props.value
+                                value: this.props.value,
+                                onChange: this.handleValueChange
                             })}
                         </div>
                     </div>
@@ -155,6 +156,14 @@ export default class Filter extends React.Component {
         this.props.onOperatorIdChange({
             id: this.props.id,
             operatorId: value
+        })
+    }
+
+    handleValueChange = ({value}) => {
+
+        this.props.onValueChange({
+            id: this.props.id,
+            value
         })
     }
 }

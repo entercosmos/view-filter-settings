@@ -100,7 +100,16 @@ class Example1 extends React.Component {
                         }
                     })
                 }}
-                onValueChange={() => alert('onValueChange')}
+                onValueChange={({id, value}) => {
+
+                    this.props.dispatch({
+                        type: 'UPDATE_FILTER_VALUE',
+                        payload: {
+                            id,
+                            value
+                        }
+                    })
+                }}
             />
         )
     }

@@ -28,7 +28,9 @@ export default class TextEditor extends React.Component {
                 value={this.props.value || ''}
                 onChange={e => {
                     const value = e.target.value
-                    this.props.onChange(value === '' ? null : value)
+                    this.props.onChange({
+                        value: value === '' ? null : value
+                    })
                 }}
             />
         )

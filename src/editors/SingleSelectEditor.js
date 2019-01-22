@@ -17,6 +17,7 @@ export default class SingleSelectEditor extends React.Component {
                     id: 'opt3',
                     name: 'Option C'
                 }]}
+                onChange={this.props.onChange}
             />
         )
     }

@@ -27,8 +27,9 @@ export default class NumberEditor extends React.Component {
                     `}
                 value={this.props.value || ''}
                 onChange={e => {
-                    const value = e.target.value === '' ? null : parseInt(e.target.value, 10)
-                    this.props.onChange(value)
+                    this.props.onChange({
+                        value: e.target.value === '' ? null : parseInt(e.target.value, 10)
+                    })
                 }}
             />
         )

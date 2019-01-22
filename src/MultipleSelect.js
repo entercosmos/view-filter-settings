@@ -4,7 +4,7 @@ import icons from './icons'
 import {css, cx} from 'emotion'
 import Switch from './modules/Switch'
 
-const Option = ({id, checked, name, icon, onChange}) => (
+const Option = ({id, checked, name, icon, onCheckedChange}) => (
     <div
         className={css`
             padding-top: 8px;
@@ -18,6 +18,7 @@ const Option = ({id, checked, name, icon, onChange}) => (
                 opacity: 0.75;
             }
         `}
+        onClick={() => onCheckedChange({id})}
     >
         <Switch
             id={id}
@@ -26,7 +27,6 @@ const Option = ({id, checked, name, icon, onChange}) => (
             `}
             width={22}
             value={checked}
-            onChange={onChange}
         />
         {name}
     </div>
@@ -141,17 +141,20 @@ export default class MultipleSelect extends React.Component {
 
     handleOptionCheckedChange = ({id}) => {
 
+        console.log('handleOptionCheckedChange', id)
+
         const remove = this.props.value.includes(id)
 
         let value = [].concat(this.props.value)
 
         if (remove) {
             value = value.filter(i => i !== id)
+        } else {
+            value.push(id)
         }
 
-        value.push(id)
 
-        this.props.onChange(value)
+        this.props.onChange({value})
     }
 
     close = () => {

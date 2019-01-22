@@ -43,8 +43,10 @@ export default class DateEditor extends React.Component {
                 onChange={({value}) => {
 
                     this.props.onChange({
-                        modeId: this.props.modeId,
-                        exactDate: value
+                        value: {
+                            modeId: this.props.modeId,
+                            exactDate: value
+                        }
                     })
                 }}
             />
