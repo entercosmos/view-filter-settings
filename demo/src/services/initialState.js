@@ -442,10 +442,9 @@ export default fromJS({
                 editorId: null
             }
         },
-        fieldsById: {
+        fieldTypesById: {
             'autonumber': {
                 id: 'autonumber',
-                typeId: 'autonumber',
                 name: 'Autonumber',
                 operators: [
                     'autonumber_=',
@@ -458,7 +457,6 @@ export default fromJS({
             },
             'attachment': {
                 id: 'attachment',
-                typeId: 'attachment',
                 name: 'Attachments',
                 operators: [
                     'attachment_filename',
@@ -469,7 +467,6 @@ export default fromJS({
             },
             'checkbox': {
                 id: 'checkbox',
-                typeId: 'checkbox',
                 name: 'Checkbox',
                 operators: [
                     'checkbox_='
@@ -477,7 +474,6 @@ export default fromJS({
             },
             'collaborator': {
                 id: 'collaborator',
-                typeId: 'collaborator',
                 name: 'Collaborator',
                 operators: [
                     'collaborator_=',
@@ -490,7 +486,6 @@ export default fromJS({
             },
             'createdCollaborator': {
                 id: 'createdCollaborator',
-                typeId: 'createdCollaborator',
                 name: 'Created collaborator',
                 operators: [
                     'createdCollaborator_=',
@@ -501,7 +496,6 @@ export default fromJS({
             },
             'createdTime': {
                 id: 'createdTime',
-                typeId: 'createdTime',
                 name: 'Created time',
                 operators: [
                     'createdTime_=',
@@ -515,7 +509,6 @@ export default fromJS({
             },
             'date': {
                 id: 'date',
-                typeId: 'date',
                 name: 'Date',
                 operators: [
                     'date_=',
@@ -531,7 +524,6 @@ export default fromJS({
             },
             'longText': {
                 id: 'longText',
-                typeId: 'longText',
                 name: 'Long text',
                 operators: [
                     'longText_contains',
@@ -544,7 +536,6 @@ export default fromJS({
             },
             'linkToAnotherRecord': {
                 id: 'linkToAnotherRecord',
-                typeId: 'linkToAnotherRecord',
                 name: 'Link to another record',
                 operators: [
                     'linkToAnotherRecord_contains',
@@ -555,7 +546,6 @@ export default fromJS({
             },
             'multipleCollaborator': {
                 id: 'multipleCollaborator',
-                typeId: 'multipleCollaborator',
                 name: 'Multiple collaborator',
                 operators: [
                     'multipleCollaborator_hasAnyOf',
@@ -568,7 +558,6 @@ export default fromJS({
             },
             'multipleSelect': {
                 id: 'multipleSelect',
-                typeId: 'multipleSelect',
                 name: 'Multiple select',
                 operators: [
                     'multipleSelect_hasAnyOf',
@@ -581,7 +570,6 @@ export default fromJS({
             },
             'number': {
                 id: 'number',
-                typeId: 'number',
                 name: 'Number',
                 operators: [
                     'number_=',
@@ -596,7 +584,6 @@ export default fromJS({
             },
             'singleLineText': {
                 id: 'singleLineText',
-                typeId: 'singleLineText',
                 name: 'Single line text',
                 operators: [
                     'singleLineText_contains',
@@ -609,7 +596,6 @@ export default fromJS({
             },
             'singleSelect': {
                 id: 'singleSelect',
-                typeId: 'singleSelect',
                 name: 'Single select',
                 operators: [
                     'singleSelect_=',
@@ -622,7 +608,6 @@ export default fromJS({
             },
             'updatedTime': {
                 id: 'updatedTime',
-                typeId: 'updatedTime',
                 name: 'Updated time',
                 operators: [
                     'updatedTime_=',
@@ -635,6 +620,83 @@ export default fromJS({
                     'updatedTime_isEmpty',
                     'updatedTime_isNotEmpty',
                 ]
+            }
+        },
+        fieldsById: {
+            'autonumber': {
+                id: 'autonumber',
+                typeId: 'autonumber',
+                name: 'Autonumber'
+            },
+            'attachment': {
+                id: 'attachment',
+                typeId: 'attachment',
+                name: 'Attachments'
+            },
+            'checkbox': {
+                id: 'checkbox',
+                typeId: 'checkbox',
+                name: 'Checkbox'
+            },
+            'collaborator': {
+                id: 'collaborator',
+                typeId: 'collaborator',
+                name: 'Collaborator'
+            },
+            'createdCollaborator': {
+                id: 'createdCollaborator',
+                typeId: 'createdCollaborator',
+                name: 'Created collaborator'
+            },
+            'createdTime': {
+                id: 'createdTime',
+                typeId: 'createdTime',
+                name: 'Created time'
+            },
+            'date': {
+                id: 'date',
+                typeId: 'date',
+                name: 'Date'
+            },
+            'longText': {
+                id: 'longText',
+                typeId: 'longText',
+                name: 'Long text'
+            },
+            'linkToAnotherRecord': {
+                id: 'linkToAnotherRecord',
+                typeId: 'linkToAnotherRecord',
+                name: 'Link to another record'
+            },
+            'multipleCollaborator': {
+                id: 'multipleCollaborator',
+                typeId: 'multipleCollaborator',
+                name: 'Multiple collaborator'
+            },
+            'multipleSelect': {
+                id: 'multipleSelect',
+                typeId: 'multipleSelect',
+                name: 'Multiple select'
+            },
+            'number': {
+                id: 'number',
+                typeId: 'number',
+                name: 'Number'
+            },
+            'singleLineText': {
+                id: 'singleLineText',
+                typeId: 'singleLineText',
+                name: 'Single line text'
+            },
+            'singleSelect': {
+                id: 'singleSelect',
+                typeId: 'singleSelect',
+                name: 'Single select'
+            },
+            'updatedTime': {
+                id: 'updatedTime',
+                typeId: 'updatedTime',
+                name: 'Updated time'
             }
         },
         filtersById: {

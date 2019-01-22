@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {css} from 'emotion'
-import FilterContainer from './FilterContainer'
-import Filter from './Filter'
 import FloatingActionButton from './FloatingActionButton'
 import icons from './icons'
 

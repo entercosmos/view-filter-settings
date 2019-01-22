@@ -9,8 +9,9 @@ import editors from '../../../src/editors'
 const ConnectedFilter = connect((state, props) => {
 
     const fieldId = state.getIn(['cache', 'filtersById', props.id, 'fieldId'])
-    const field = state.getIn(['cache', 'fieldsById', fieldId])
-    const operators = field.get('operators').map(id => {
+    const fieldTypeId = state.getIn(['cache', 'fieldsById', fieldId, 'typeId'])
+    const fieldType = state.getIn(['cache', 'fieldTypesById', fieldTypeId])
+    const operators = fieldType.get('operators').map(id => {
         if (!state.getIn(['cache', 'operatorsById', id])) {
             throw new Error(id)
         }
