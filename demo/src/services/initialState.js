@@ -6,175 +6,252 @@ export default fromJS({
             'attachment_filename': {
                 id: 'attachment_filename',
                 name: 'filename',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'attachment_filetype': {
                 id: 'attachment_filetype',
                 name: 'filetype',
-                editorId: 'filetype'
+                editorId: 'filetype',
+                defaultValue: 'image/jpeg'
             },
             'attachment_isNotEmpty': {
                 id: 'attachment_isNotEmpty',
-                name: 'is not empty'
+                name: 'is not empty',
+                defaultValue: null
             },
             'attachment_isEmpty': {
                 id: 'attachment_isEmpty',
-                name: 'is empty'
+                name: 'is empty',
+                defaultValue: null
             },
             'autonumber_!=': {
                 id: 'autonumber_!=',
                 name: '!=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'autonumber_<': {
                 id: 'autonumber_<',
                 name: '<',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'autonumber_<=': {
                 id: 'autonumber_<=',
                 name: '<=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'autonumber_=': {
                 id: 'autonumber_=',
                 name: '=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'autonumber_>': {
                 id: 'autonumber_>',
                 name: '>',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'autonumber_>=': {
                 id: 'autonumber_>=',
                 name: '>=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'checkbox_=': {
                 id: 'checkbox_=',
                 name: 'is',
-                editorId: 'checkbox'
+                editorId: 'checkbox',
+                defaultValue: false
             },
             'collaborator_=': {
                 id: 'collaborator_=',
                 name: 'is',
-                editorId: 'collaborator'
+                editorId: 'collaborator',
+                defaultValue: null
             },
             'collaborator_!=': {
                 id: 'collaborator_!=',
                 name: 'is not',
-                editorId: 'collaborator'
+                editorId: 'collaborator',
+                defaultValue: null
             },
             'collaborator_isAnyOf': {
                 id: 'collaborator_isAnyOf',
                 name: 'is any of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'collaborator_isNoneOf': {
                 id: 'collaborator_isNoneOf',
                 name: 'is none of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'collaborator_isEmpty': {
                 id: 'collaborator_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'collaborator_isNotEmpty': {
                 id: 'collaborator_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'createdCollaborator_=': {
                 id: 'createdCollaborator_=',
                 name: 'is',
-                editorId: 'collaborator'
+                editorId: 'collaborator',
+                defaultValue: null
             },
             'createdCollaborator_!=': {
                 id: 'createdCollaborator_!=',
                 name: 'is not',
-                editorId: 'collaborator'
+                editorId: 'collaborator',
+                defaultValue: null
             },
             'createdCollaborator_isAnyOf': {
                 id: 'createdCollaborator_isAnyOf',
                 name: 'is any of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'createdCollaborator_isNoneOf': {
                 id: 'createdCollaborator_isNoneOf',
                 name: 'is none of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'createdTime_=': {
                 id: 'createdTime_=',
                 name: 'is',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'createdTime_!=': {
                 id: 'createdTime_!=',
                 name: 'is not',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'createdTime_isWithin': {
                 id: 'createdTime_isWithin',
                 name: 'is within',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'createdTime_<': {
                 id: 'createdTime_<',
                 name: 'is before',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'createdTime_>': {
                 id: 'createdTime_>',
                 name: 'is after',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'createdTime_>=': {
                 id: 'createdTime_>=',
                 name: 'is on or after',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'createdTime_<=': {
                 id: 'createdTime_<=',
                 name: 'is on or before',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_=': {
                 id: 'date_=',
                 name: 'is',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_!=': {
                 id: 'date_!=',
                 name: 'is not',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_isWithin': {
                 id: 'date_isWithin',
                 name: 'is within',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_<': {
                 id: 'date_<',
                 name: 'is before',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_>': {
                 id: 'date_>',
                 name: 'is after',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_>=': {
                 id: 'date_>=',
                 name: 'is on or after',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_<=': {
                 id: 'date_<=',
                 name: 'is on or before',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'date_isEmpty': {
                 id: 'date_isEmpty',
@@ -189,257 +266,329 @@ export default fromJS({
             'longText_contains': {
                 id: 'longText_contains',
                 name: 'contains',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'longText_doesNotContain': {
                 id: 'longText_doesNotContain',
                 name: 'does not contain',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'longText_=': {
                 id: 'longText_=',
                 name: 'is',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'longText_!=': {
                 id: 'longText_!=',
                 name: 'is not',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'longText_isEmpty': {
                 id: 'longText_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'longText_isNotEmpty': {
                 id: 'longText_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'linkToAnotherRecord_contains': {
                 id: 'linkToAnotherRecord_contains',
                 name: 'contains',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'linkToAnotherRecord_doesNotContain': {
                 id: 'linkToAnotherRecord_doesNotContain',
                 name: 'does not contain',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'linkToAnotherRecord_isEmpty': {
                 id: 'linkToAnotherRecord_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'linkToAnotherRecord_isNotEmpty': {
                 id: 'linkToAnotherRecord_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'multipleCollaborator_hasAnyOf': {
                 id: 'multipleCollaborator_hasAnyOf',
                 name: 'has any of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'multipleCollaborator_hasAllOf': {
                 id: 'multipleCollaborator_hasAllOf',
                 name: 'has all of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'multipleCollaborator_=': {
                 id: 'multipleCollaborator_=',
                 name: 'is',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'multipleCollaborator_hasNoneOf': {
                 id: 'multipleCollaborator_hasNoneOf',
                 name: 'has none of',
-                editorId: 'multipleCollaborator'
+                editorId: 'multipleCollaborator',
+                defaultValue: []
             },
             'multipleCollaborator_isEmpty': {
                 id: 'multipleCollaborator_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'multipleCollaborator_isNotEmpty': {
                 id: 'multipleCollaborator_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'multipleSelect_hasAnyOf': {
                 id: 'multipleSelect_hasAnyOf',
                 name: 'has any of',
-                editorId: 'multipleSelect'
+                editorId: 'multipleSelect',
+                defaultValue: []
             },
             'multipleSelect_hasAllOf': {
                 id: 'multipleSelect_hasAllOf',
                 name: 'has all of',
-                editorId: 'multipleSelect'
+                editorId: 'multipleSelect',
+                defaultValue: []
             },
             'multipleSelect_=': {
                 id: 'multipleSelect_=',
                 name: 'is',
-                editorId: 'multipleSelect'
+                editorId: 'multipleSelect',
+                defaultValue: []
             },
             'multipleSelect_hasNoneOf': {
                 id: 'multipleSelect_hasNoneOf',
                 name: 'has none of',
-                editorId: 'multipleSelect'
+                editorId: 'multipleSelect',
+                defaultValue: []
             },
             'multipleSelect_isEmpty': {
                 id: 'multipleSelect_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'multipleSelect_isNotEmpty': {
                 id: 'multipleSelect_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'number_=': {
                 id: 'number_=',
                 name: '=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'number_<': {
                 id: 'number_<',
                 name: '<',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'number_<=': {
                 id: 'number_<=',
                 name: '<=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'number_!=': {
                 id: 'number_!=',
                 name: '!=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'number_>': {
                 id: 'number_>',
                 name: '>',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'number_>=': {
                 id: 'number_>=',
                 name: '>=',
-                editorId: 'number'
+                editorId: 'number',
+                defaultValue: null
             },
             'number_isEmpty': {
                 id: 'number_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'number_isNotEmpty': {
                 id: 'number_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'singleLineText_contains': {
                 id: 'singleLineText_contains',
                 name: 'contains',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'singleLineText_doesNotContain': {
                 id: 'singleLineText_doesNotContain',
                 name: 'doesNotContain',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'singleLineText_=': {
                 id: 'singleLineText_=',
                 name: '=',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'singleLineText_!=': {
                 id: 'singleLineText_!=',
                 name: '!=',
-                editorId: 'text'
+                editorId: 'text',
+                defaultValue: null
             },
             'singleLineText_isEmpty': {
                 id: 'singleLineText_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'singleLineText_isNotEmpty': {
                 id: 'singleLineText_isNotEmpty',
                 name: 'is not emptuy',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'singleSelect_=': {
                 id: 'singleSelect_=',
                 name: 'is',
-                editorId: 'singleSelect'
+                editorId: 'singleSelect',
+                defaultValue: null
             },
             'singleSelect_!=': {
                 id: 'singleSelect_!=',
                 name: 'is not',
-                editorId: 'singleSelect'
+                editorId: 'singleSelect',
+                defaultValue: null
             },
             'singleSelect_isAnyOf': {
                 id: 'singleSelect_isAnyOf',
                 name: 'is any of',
-                editorId: 'multipleSelect'
+                editorId: 'multipleSelect',
+                defaultValue: null
             },
             'singleSelect_isNoneOf': {
                 id: 'singleSelect_isNoneOf',
                 name: 'is none of',
-                editorId: 'multipleSelect'
+                editorId: 'multipleSelect',
+                defaultValue: null
             },
             'singleSelect_isEmpty': {
                 id: 'singleSelect_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'singleSelect_isNotEmpty': {
                 id: 'singleSelect_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'updatedTime_=': {
                 id: 'updatedTime_=',
                 name: 'is',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_!=': {
                 id: 'updatedTime_!=',
                 name: 'is not',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_isWithin': {
                 id: 'updatedTime_isWithin',
                 name: 'is within',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_<': {
                 id: 'updatedTime_<',
                 name: 'is before',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_>': {
                 id: 'updatedTime_>',
                 name: 'is after',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_>=': {
                 id: 'updatedTime_>=',
                 name: 'is on or after',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_<=': {
                 id: 'updatedTime_<=',
                 name: 'is on or before',
-                editorId: 'date'
+                editorId: 'date',
+                defaultValue: {
+                    modeId: 'exactDate',
+                    exactDate: null
+                }
             },
             'updatedTime_isEmpty': {
                 id: 'updatedTime_isEmpty',
                 name: 'is empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             },
             'updatedTime_isNotEmpty': {
                 id: 'updatedTime_isNotEmpty',
                 name: 'is not empty',
-                editorId: null
+                editorId: null,
+                defaultValue: null
             }
         },
         fieldTypesById: {

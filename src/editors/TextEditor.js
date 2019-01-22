@@ -25,9 +25,10 @@ export default class TextEditor extends React.Component {
                             border-color: rgba(0,0,0,0.25);
                         }
                     `}
-                value={this.props.value}
+                value={this.props.value || ''}
                 onChange={e => {
-                    this.props.onChange(e.target.value)
+                    const value = e.target.value
+                    this.props.onChange(value === '' ? null : value)
                 }}
             />
         )

@@ -25,7 +25,7 @@ export default class NumberEditor extends React.Component {
                             border-color: rgba(0,0,0,0.25);
                         }
                     `}
-                value={this.props.value}
+                value={this.props.value || ''}
                 onChange={e => {
                     const value = e.target.value === '' ? null : parseInt(e.target.value, 10)
                     this.props.onChange(value)

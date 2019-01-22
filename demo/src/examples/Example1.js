@@ -80,8 +80,26 @@ class Example1 extends React.Component {
                         }
                     })
                 }}
-                onFieldIdChange={() => alert('onFieldIdChange')}
-                onOperatorIdChange={() => alert('onOperatorIdChange')}
+                onFieldIdChange={({id, fieldId}) => {
+
+                    this.props.dispatch({
+                        type: 'UPDATE_FILTER_FIELD_ID',
+                        payload: {
+                            id,
+                            fieldId
+                        }
+                    })
+                }}
+                onOperatorIdChange={({id, operatorId}) => {
+
+                    this.props.dispatch({
+                        type: 'UPDATE_FILTER_OPERATOR_ID',
+                        payload: {
+                            id,
+                            operatorId
+                        }
+                    })
+                }}
                 onValueChange={() => alert('onValueChange')}
             />
         )

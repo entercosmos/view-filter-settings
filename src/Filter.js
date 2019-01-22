@@ -91,6 +91,7 @@ export default class Filter extends React.Component {
                             alignRight={true}
                             value={this.props.fieldId}
                             options={this.props.fields}
+                            onChange={this.handleFieldIdChange}
                         />
                     </div>
                 </div>
@@ -119,6 +120,7 @@ export default class Filter extends React.Component {
                             }}
                             value={this.props.operatorId}
                             options={this.props.operators}
+                            onChange={this.handleOperatorIdChange}
                         />
                         <div
                             className={css`
@@ -138,5 +140,21 @@ export default class Filter extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    handleFieldIdChange = ({value}) => {
+
+        this.props.onFieldIdChange({
+            id: this.props.id,
+            fieldId: value
+        })
+    }
+
+    handleOperatorIdChange = ({value}) => {
+
+        this.props.onOperatorIdChange({
+            id: this.props.id,
+            operatorId: value
+        })
     }
 }
