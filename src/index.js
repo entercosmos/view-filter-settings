@@ -16,12 +16,6 @@ export default class FilterSettings extends React.Component {
                 name: PropTypes.string.isRequired
             })
         ),
-        operators: PropTypes.arrayOf(
-            PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                name: PropTypes.string.isRequired
-            })
-        ),
         filters: PropTypes.arrayOf(
             PropTypes.string.isRequired
         ),
@@ -39,7 +33,6 @@ export default class FilterSettings extends React.Component {
         const {
             filterRenderer,
             fields,
-            operators,
             valueRenderer,
             onFieldIdChange,
             onOperatorIdChange,
@@ -74,10 +67,10 @@ export default class FilterSettings extends React.Component {
                             `}
                         >
                             {this.props.filters.map((id, index) => filterRenderer({
+                                key: id,
                                 id,
                                 index,
                                 fields,
-                                operators,
                                 valueRenderer,
                                 onFieldIdChange,
                                 onOperatorIdChange,

@@ -43,6 +43,7 @@ class Viewport extends React.Component {
 }
 
 const views = ['attachment', 'autonumber', 'checkbox', 'collaborator', 'createdCollaborator', 'createdTime', 'date', 'linkToAnotherRecord', 'longText', 'multipleCollaborator', 'multipleSelect', 'number', 'singleLineText', 'singleSelect', 'updatedTime']
+// const views = ['attachment', 'autonumber']
 
 class Demo extends Component {
     render() {

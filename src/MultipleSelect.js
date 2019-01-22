@@ -2,8 +2,9 @@ import React from 'react'
 import ClickOutside from 'react-click-outside'
 import icons from './icons'
 import {css, cx} from 'emotion'
+import Switch from './modules/Switch'
 
-const Option = ({name, icon}) => (
+const Option = ({id, checked, name, icon, onChange}) => (
     <div
         className={css`
             padding-top: 8px;
@@ -18,14 +19,20 @@ const Option = ({name, icon}) => (
             }
         `}
     >
-        {icon ? icon({height: 16, style: {marginRight: 8, color: '#6C9AEF'}}) : null}
+        <Switch
+            id={id}
+            className={css`
+                margin-right: 8px;
+            `}
+            width={22}
+            value={checked}
+            onChange={onChange}
+        />
         {name}
     </div>
 )
 
-const defaultOptionNameGetter = option => option.name
-
-export default class Select extends React.Component {
+export default class MultipleSelect extends React.Component {
 
     state = {
         open: false
@@ -33,15 +40,9 @@ export default class Select extends React.Component {
 
     render() {
 
-        const optionNameGetter = this.props.optionNameGetter || defaultOptionNameGetter
-
-        const option = this.props.options.find(option => {
-            return option.id === this.props.value
+        const options = this.props.options.filter(option => {
+            return this.props.value.includes(option.id)
         })
-
-        if (!option) {
-            throw new Error(this.props.value)
-        }
 
         return (
             <div
@@ -87,21 +88,21 @@ export default class Select extends React.Component {
                             className={cx(css`
                                 display: flex;
                                 flex-grow: 1;
-                                overflow: hidden;
                                 white-space: nowrap;
+                                overflow: hidden;
                             `, this.props.alignRight ? css`justify-content: flex-end` : null
                             )}
                         >
-                            <span
-                                className={css`
-                             max-width: 100%;
-                                text-overflow: ellipsis;
-                                white-space: nowrap;
-                                `}
-                            >
-                            {option.name}
-
-                            </span>
+                            {options.map(option => (
+                                <span
+                                    key={option.id}
+                                    className={css`
+                                        margin-right: 8px;
+                                    `}
+                                >
+                                    {option.name}
+                                </span>
+                            ))}
                         </div>
                         <div>
                             {icons.arrowDown({size: 12})}
@@ -126,16 +127,31 @@ export default class Select extends React.Component {
                                 <Option
                                     key={option.id}
                                     id={option.id}
-                                    icon={option.icon}
-                                    name={optionNameGetter(option)}
+                                    checked={this.props.value.includes(option.id)}
+                                    onCheckedChange={this.handleOptionCheckedChange}
+                                    name={option.name}
                                 />
                             ))}
                         </ClickOutside>
                     ) : null}
                 </div>
-
             </div>
         )
+    }
+
+    handleOptionCheckedChange = ({id}) => {
+
+        const remove = this.props.value.includes(id)
+
+        let value = [].concat(this.props.value)
+
+        if (remove) {
+            value = value.filter(i => i !== id)
+        }
+
+        value.push(id)
+
+        this.props.onChange(value)
     }
 
     close = () => {

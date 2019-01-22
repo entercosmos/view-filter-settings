@@ -114,6 +114,9 @@ export default class Filter extends React.Component {
                                 flex: none;
                                 margin-right: 4px;
                             `}
+                            optionNameGetter={option => {
+                                return option.name + (option.editorId ? '...' : '')
+                            }}
                             value={this.props.operatorId}
                             options={this.props.operators}
                         />

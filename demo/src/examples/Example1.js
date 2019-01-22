@@ -1,15 +1,28 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import icons from '../icons'
-import {css} from 'emotion'
 import ViewFilterSettings from '../../../src'
 import Filter from '../../../src/Filter'
+import editors from '../../../src/editors'
 
-const ConnectedFilter = connect((state, props) => ({
-    fieldId: state.getIn(['cache', 'filtersById', props.id, 'fieldId']),
-    operatorId: state.getIn(['cache', 'filtersById', props.id, 'operatorId']),
-    value: state.getIn(['cache', 'filtersById', props.id, 'value']),
-}))(Filter)
+const ConnectedFilter = connect((state, props) => {
+
+    const fieldId = state.getIn(['cache', 'filtersById', props.id, 'fieldId'])
+    const field = state.getIn(['cache', 'fieldsById', fieldId])
+    const operators = field.get('operators').map(id => {
+        if (!state.getIn(['cache', 'operatorsById', id])) {
+            throw new Error(id)
+        }
+        return state.getIn(['cache', 'operatorsById', id])
+    }).toJS()
+    const filter = state.getIn(['cache', 'filtersById', props.id]).toJS()
+    return {
+        fieldId,
+        operators,
+        operatorId: state.getIn(['cache', 'filtersById', props.id, 'operatorId']),
+        value: filter.value,
+    }
+})(Filter)
 
 const filterRenderer = props => (
     <ConnectedFilter
@@ -24,36 +37,18 @@ class Example1 extends React.Component {
         return (
             <ViewFilterSettings
                 fields={this.props.fields.toJS()}
-                operators={this.props.operators.toJS()}
                 valueRenderer={({fieldId, operatorId, value, onChange}) => {
 
-                    // assume operatorId is `contains`
+                    const editorId = this.props.operatorsById.getIn([operatorId, 'editorId'])
+
+                    if (!editorId) return null
+
+                    const Editor = editors[editorId]
 
                     return (
-                        <input
-                            type="text"
-                            className={css`
-                    justify-content: flex-end;
-                        display: flex;
-                        flex: 1 1 auto;
-                        min-width: 0;
-                        min-height: 0;
-                        align-items: center;
-                        padding-left: 4px;
-                        padding-right: 4px;
-                        cursor: pointer;
-                        border-radius: 3px;
-                        position: relative;
-                        background-color: hsla(0,0%,0%,0.05);
-                        border: 2px solid transparent;
-                        &:focus {
-                            border-color: rgba(0,0,0,0.25);
-                        }
-                    `}
+                        <Editor
                             value={value}
-                            onChange={e => {
-                                onChange(e.target.value)
-                            }}
+                            onChange={onChange}
                         />
                     )
                 }}
@@ -88,9 +83,7 @@ const mapStateToProps = (state, props) => {
 
     return {
         view,
-        operators: state.get('operators').map(id => {
-            return state.getIn(['cache', 'operatorsById', id])
-        }),
+        operatorsById: state.getIn(['cache', 'operatorsById']),
         fields: state.get('fields').map(id => {
             const field = state
                 .getIn(['cache', 'fieldsById', id])

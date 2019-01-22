@@ -23,6 +23,7 @@
   "dependencies": {
     "emotion": "^9.2.12",
     "immutable": "^4.0.0-rc.12",
+    "moment": "^2.24.0",
     "prop-types": "^15.6.2",
     "react-click-outside": "github:tj/react-click-outside",
     "react-select": "^2.1.1",
