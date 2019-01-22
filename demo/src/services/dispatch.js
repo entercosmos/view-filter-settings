@@ -14,6 +14,19 @@ export default (state, action) => {
             return state
         }
 
+        case 'REMOVE_FILTER': {
+            const {viewId, id} = action.payload
+            state = state.updateIn(['cache', 'viewsById', viewId, 'filters'], filters => {
+                return filters.filter(filterId => {
+                    return filterId !== id
+                })
+            })
+
+            state = state.removeIn(['cache', 'filtersById', id])
+
+            return state
+        }
+
         default: {
             return state
         }

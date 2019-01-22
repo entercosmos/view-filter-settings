@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import uniqueId from 'lodash/uniqueId'
 import icons from '../icons'
 import ViewFilterSettings from '../../../src'
 import Filter from '../../../src/Filter'
@@ -58,17 +59,26 @@ class Example1 extends React.Component {
                     this.props.dispatch({
                         type: 'CREATE_FILTER',
                         payload: {
-                            viewId: 'viw1',
+                            viewId: this.props.viewId,
                             filter: {
-                                id: 'flt1',
-                                fieldId: 'fld1',
-                                operatorId: '=',
-                                value: 'String 123'
+                                id: uniqueId('flt'),
+                                fieldId: 'singleLineText',
+                                operatorId: 'singleLineText_contains',
+                                value: 'Luke Skywalker'
                             }
                         }
                     })
                 }}
-                onRemove={() => alert('onRemove')}
+                onRemove={({id}) => {
+
+                    this.props.dispatch({
+                        type: 'REMOVE_FILTER',
+                        payload: {
+                            viewId: this.props.viewId,
+                            id
+                        }
+                    })
+                }}
                 onFieldIdChange={() => alert('onFieldIdChange')}
                 onOperatorIdChange={() => alert('onOperatorIdChange')}
                 onValueChange={() => alert('onValueChange')}
