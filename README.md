@@ -1,5 +1,7 @@
 # ![ViewFilterSettings](https://user-images.githubusercontent.com/44801418/48110641-d1992a00-e27f-11e8-9270-9ea5d8471e49.png) FilterSettings
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/entercosmos/view-filter-settings.svg)](https://greenkeeper.io/)
+
 [![npm package][npm-badge]][npm]
 
 Used for configuring filters in a view.	
